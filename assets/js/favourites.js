@@ -3,14 +3,14 @@ try {
   var favMoviesList = favMoviesList.filter(function (e) {
     return e !== "null";
   });
-  console.log(favMoviesList);
+ 
   if (favMoviesList.length == 0) {
     window.alert("Nothing in favourite");
-    window.location.href = "index.html";
+    window.location.href = history.back();
   }
 } catch {
   window.alert("Nothing in favourite");
-  window.location.href = "index.html";
+  window.location.href = history.back();
 }
 var ul = document.getElementById("lists");
 
