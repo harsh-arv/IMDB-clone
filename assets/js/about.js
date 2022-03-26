@@ -23,7 +23,7 @@ Plot.innerHTML += "   " + movie.Plot;
 imdbRating.innerHTML += "   " + movie.imdbRating;
 
 var str = localStorage.getItem("favMovie");
-console.log(str);
+
 
 btn.onclick = function (e) {
   //check weather this is already in the str or not
@@ -38,12 +38,10 @@ btn.onclick = function (e) {
 
 // func to handle click on home button
 homeBtn.onclick = function () {
-  console.log("here");
   window.location.href = "index.html";
 };
 
 // func to handle click on Favourite button
 favBtn.onclick = function () {
-  console.log("here");
   window.location.href = "favourites.html";
 };

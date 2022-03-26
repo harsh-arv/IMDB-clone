@@ -32,7 +32,7 @@ async function favtab() {
       li.appendChild(document.createTextNode(x));
       li.value = count;
       li.appendChild(deleteButton).addEventListener("click", removeItem);
-      webLink = `http://www.omdbapi.com/?i=tt3896198&apikey=de1fde66&t=${x}`;
+      webLink = `https://www.omdbapi.com/?i=tt3896198&apikey=de1fde66&t=${x}`;
       var result = await fetch(webLink);
       var data = await result.json();
       img.src = data.Poster;
@@ -41,7 +41,6 @@ async function favtab() {
   }
 }
 homeBtn.onclick = function () {
-  console.log("here");
   window.location.href = "index.html";
 };
 var elements = document.getElementsByClassName("btn");
@@ -51,19 +50,17 @@ for (var i = 0; i < elements.length; i++) {
 
 //func to remove movie from local storage and li
 function removeItem() {
-  console.log(this.parentNode.value);
   var name = favMoviesList[this.parentNode.value];
   var filteredArray = favMoviesList.filter(function (e) {
     return e !== name;
   });
 
-  console.log(filteredArray);
+  //console.log(filteredArray);
   var str = "null";
   for (var i = 0; i < filteredArray.length; i++) {
     str += "," + filteredArray[i];
   }
   localStorage.setItem("favMovie", str);
-  console.log(str);
   this.parentNode.remove();
 
   //reload after every deletion

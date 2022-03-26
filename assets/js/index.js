@@ -23,7 +23,7 @@ async function search(e) {
   searchInput += e.key;
 
   url =
-    "http://www.omdbapi.com/?i=tt3896198&apikey=de1fde66" + "&s=" + searchInput;
+    "https://www.omdbapi.com/?i=tt3896198&apikey=de1fde66" + "&s=" + searchInput;
   var result = await fetch(url);
   var data = await result.json();
   var movies = data.Search;
@@ -49,7 +49,7 @@ inputBox.onkeyup = async (e) => {
   if (userData) {
     icon.onclick = async () => {
       if (dataResponse == "True") {
-        webLink = `http://www.omdbapi.com/?i=tt3896198&apikey=de1fde66&t=${userData}`;
+        webLink = `https://www.omdbapi.com/?i=tt3896198&apikey=de1fde66&t=${userData}`;
         var result = await fetch(webLink);
         var data = await result.json();
         var getData = {
@@ -103,7 +103,7 @@ async function select(element) {
   icon.onclick = async () => {
     // if response is
     if (dataResponse == "True") {
-      webLink = `http://www.omdbapi.com/?i=tt3896198&apikey=de1fde66&t=${selectData}`;
+      webLink = `https://www.omdbapi.com/?i=tt3896198&apikey=de1fde66&t=${selectData}`;
 
       var result = await fetch(webLink);
       var data = await result.json();
